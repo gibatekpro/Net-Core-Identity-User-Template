@@ -22,8 +22,8 @@ Project/
 ├── Data
 │   └── DefaultDbContext.cs
 ├── Models
+│   └── User.cs
 ├── Program.cs
-├── .gitignore
 ├── README.md
 ├── Services
 │   ├── AccountService
