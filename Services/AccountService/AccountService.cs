@@ -10,7 +10,8 @@ public class AccountService : IAccountService
     private readonly UserManager<IdentityUser> _userManager;
     private readonly SignInManager<IdentityUser> _signInManager;
     private readonly IEmailService _emailService;
-    private readonly IConfiguration _configuration;
+    private readonly JwtSettings _jwtSettings;
+    private readonly EmailSettings  _emailSettings;
 
     public AccountService(UserManager<IdentityUser> userManager,
                           SignInManager<IdentityUser> signInManager,
@@ -20,7 +21,7 @@ public class AccountService : IAccountService
         _userManager = userManager;
         _signInManager = signInManager;
         _emailService = emailService;
-        _jwtSettings = config.Value.Jwt;
+        _jwtSettings = config.Value.JwtSettings;
         _emailSettings = config.Value.EmailSettings;
     }
 
