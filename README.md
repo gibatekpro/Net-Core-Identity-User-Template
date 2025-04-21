@@ -49,24 +49,28 @@ Project/
 ### 1. Clone the repo
 ```bash
 git clone https://github.com/gibatekpro/Net-Core-Identity-User-Template.git
-cd identity-jwt-template
+cd Net-Core-Identity-User-Template
 ```
 
 ### 2. Update `appsettings.json`
 ```json
-"Jwt": {
-  "Key": "your_jwt_secret",
-  "Issuer": "https://localhost:44300",
-  "ExpireHours": 1
-},
-"EmailSettings": {
-  "SmtpServer": "smtp.gmail.com",
-  "SmtpPort": 587,
-  "SmtpUsername": "youraccount@gmail.com",
-  "SmtpPassword": "your-app-password"
-},
-"ConnectionStrings": {
-  "DefaultConnection": "Server=localhost;Database=IdentityDb;Trusted_Connection=True;"
+{
+    "AppConfig": {
+        "Jwt": {
+            "Key": "your_jwt_secret",
+            "Issuer": "https://localhost:44300",
+            "ExpireHours": 1
+        },
+        "EmailSettings": {
+            "SmtpServer": "smtp.gmail.com",
+            "SmtpPort": 587,
+            "SmtpUsername": "youraccount@gmail.com",
+            "SmtpPassword": "your-app-password"
+        }
+    },
+    "ConnectionStrings": {
+        "DefaultConnection": "Server=localhost;Database=IdentityDb;Trusted_Connection=True;"
+    }
 }
 ```
 
