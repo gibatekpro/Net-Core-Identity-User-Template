@@ -20,6 +20,7 @@ Project/
 │   ├── AssignRoleDto.cs
 │   └── AuthDto.cs
 ├── Data
+│   ├── DbSeeder.cs
 │   └── DefaultDbContext.cs
 ├── Models
 │   └── User.cs
