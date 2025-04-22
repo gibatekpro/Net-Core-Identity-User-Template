@@ -49,4 +49,8 @@ var app = builder.Build();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+
+//Run this to seed the database
+//Use it to create a user, roles and assign roles to the user
+//await DbSeeder.SeedAsync(app.Services);
 app.Run();
