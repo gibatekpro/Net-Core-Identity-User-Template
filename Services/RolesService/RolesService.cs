@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 public class RolesService : IRolesService
 {
     private readonly RoleManager<IdentityRole> _roleManager;
-    private readonly UserManager<IdentityUser> _userManager;
+    private readonly UserManager<User> _userManager;
 
-    public RolesService(RoleManager<IdentityRole> roleManager, UserManager<IdentityUser> userManager)
+    public RolesService(RoleManager<IdentityRole> roleManager, UserManager<User> userManager)
     {
         _roleManager = roleManager;
         _userManager = userManager;

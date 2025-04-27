@@ -9,14 +9,14 @@ using Microsoft.Extensions.Options;
 
 public class AccountService : IAccountService
 {
-    private readonly UserManager<IdentityUser> _userManager;
-    private readonly SignInManager<IdentityUser> _signInManager;
+    private readonly UserManager<User> _userManager;
+    private readonly SignInManager<User> _signInManager;
     private readonly IEmailService _emailService;
     private readonly JwtSettings _jwtSettings;
     private readonly EmailSettings  _emailSettings;
 
-    public AccountService(UserManager<IdentityUser> userManager,
-                          SignInManager<IdentityUser> signInManager,
+    public AccountService(UserManager<User> userManager,
+                          SignInManager<User> signInManager,
                           IEmailService emailService,
                           IOptions<AppConfig> config)
     {
@@ -29,7 +29,7 @@ public class AccountService : IAccountService
 
     public async Task<IActionResult> RegisterAsync(AuthDto model, HttpRequest request)
     {
-        var user = new IdentityUser { UserName = model.Email, Email = model.Email };
+        var user = new User { UserName = model.Email, Email = model.Email };
         var result = await _userManager.CreateAsync(user, model.Password);
 
         if (result.Succeeded)
@@ -64,7 +64,7 @@ public class AccountService : IAccountService
         return new OkObjectResult(new { Token = token });
     }
 
-    private string GenerateJwtToken(IdentityUser user, IList<string> roles)
+    private string GenerateJwtToken(User user, IList<string> roles)
 {
     var claims = new List<Claim>
     {
