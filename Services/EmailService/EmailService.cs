@@ -1,3 +1,8 @@
+using MailKit.Net.Smtp;
+using MailKit.Security;
+using Microsoft.Extensions.Options;
+using MimeKit;
+
 public class EmailService : IEmailService
 {
     private readonly EmailSettings _emailSettings;

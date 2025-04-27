@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 
 //Inject it in Program.cs like this:
 //await DbSeeder.SeedAsync(app.Services);
